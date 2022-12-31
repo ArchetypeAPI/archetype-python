@@ -6,12 +6,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="archetypesdk",
     version="1.0.7",
-    description="Python implementation for Archetype. Archetype provides packages that automatically handles API user auth and an SDK for managing your APIs.",
+    description="Python bindings for Archetype. Archetype makes API monetization and usage based billing for APIs easy.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ArchetypeAPI/",
     author="Archetype",
-    author_email="dev@archetype.dev",
+    author_email="hello@archetype.dev",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",

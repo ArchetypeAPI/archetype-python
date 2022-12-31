@@ -35,6 +35,7 @@ You don't need this source code unless you want to modify the package. If you ju
 pip install -upgrade archetypesdk
 ```
 
+
 ## Requirements
 
 Python 3.6+ (PyPy supported)
@@ -65,6 +66,36 @@ customer = archetype.Customer.Retrieve("CUSTOM_UID")
 
 # print that customer's email
 print(customer["email"])
+
+## Track a Metered Usage
+
+archetype.BillableMetric.LogUsage(
+    custom_ud="YOUR_CUSTOMER_ID", 
+    billable_metric_id="BILLABLE_METRIC_ID", 
+    amount=#Float
+)
+
+
+# Authorize a Flask Request with Archetype Middelware
+
+@app.route("/a", methods=["GET", "POST"])
+@archetype.Auth
+def auth_test_url():
+    return jsonify({"response": "success!"}), 200
+
+# Authorize a Django Request with Archetype Middelware
+
+@archetype.Auth
+def sensitive_fbv(request, *args, **kwargs):
+    return HttpResponse()
+
+# Authorize a FastAPI Request with Archetype Middelware
+from archetypesdk.fastapi import authorized
+
+@app.get("/authorize")
+async def hello_world(is_authorized = Depends(authorized)):
+    return {"response": "Success"}
+
 
 ```
 
