@@ -18,7 +18,7 @@ Sign up to [get started](https://app.archetype.dev/signup).
 
 # Documentation
 
-##  **[Explore the docs and view the quickstart guide](https://docs.archetype.dev/docs/quickstart-guide)**
+
 
 If looking to use our APIs directly, the [API reference](https://docs.archetype.dev/reference/basic) is here.
 
@@ -26,6 +26,9 @@ With Archetype, you can keep track of all your app transactions in one place —
 
 
 # Installation
+
+**[Explore the docs and view the quickstart guide](https://docs.archetype.dev/docs/quickstart-guide)**
+
 
 You don't need this source code unless you want to modify the package. If you just want to use the package, just run:
 
@@ -40,7 +43,7 @@ Python 3.6+ (PyPy supported)
 
 The library needs to be configured with your account's **app_id** and **secret key** which is available in your **[Archetype Dashboard](app.archetype.dev/settings)**. Set `archetype.app_id` and `archetype.secret_key` to their values:
 
-`
+```
 import archetypesdk as archetype
 
 archetype.app_id = "ARCHETYPE_APP_ID"
@@ -62,6 +65,6 @@ customer = archetype.Customer.Retrieve("CUSTOM_UID")
 # print that customer's email
 print(customer["email"])
 
-`
+```
 
 You can leverage the SDK to create and configure billable metrics, products, token management, authorization and more. Check out [the docs](https://docs.archetype.dev/docs/welcome) for more examples and use cases.
