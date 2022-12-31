@@ -26,7 +26,6 @@ powerful, reliable purchase server with cross-platform support. Our open-source 
 [Archetype](https://archetype.dev) is a powerful, reliable purchase server with cross-platform support. Our open-source framework provides a backend and a wrapper around payment processors like Stripe to save engineers months from having to build custom billing infrastructure for their APIs.
 
 
-
 Whether you are building a new API or already have millions of customers, you can use Archetype to:
 
 -   Fetch products, make purchases, and check subscription status with our  [native SDKs](https://docs.archetype.dev/docs/installation).
@@ -56,3 +55,16 @@ Simplified payments for your API are just a few lines of code away.
 ## [Sign up to  **launch your API today**](https://app.archetype.dev/auth/contact-sales)
 
 ## **[Explore the docs](https://docs.archetype.dev/docs/quickstart-guide)**
+# Archetype Python Library
+
+Archetype
+
+
+## Documentation
+
+## Installation
+
+## Requirements
+
+## Usage
+
