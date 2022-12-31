@@ -29,10 +29,11 @@ With Archetype, you can keep track of all your app transactions in one place —
 
 **[Explore the docs and view the quickstart guide](https://docs.archetype.dev/docs/quickstart-guide)**
 
-
 You don't need this source code unless you want to modify the package. If you just want to use the package, just run:
 
-`pip install -upgrade archetypesdk`
+```sh
+pip install -upgrade archetypesdk
+```
 
 ## Requirements
 
@@ -43,7 +44,7 @@ Python 3.6+ (PyPy supported)
 
 The library needs to be configured with your account's **app_id** and **secret key** which is available in your **[Archetype Dashboard](app.archetype.dev/settings)**. Set `archetype.app_id` and `archetype.secret_key` to their values:
 
-```
+```python
 import archetypesdk as archetype
 
 archetype.app_id = "ARCHETYPE_APP_ID"
