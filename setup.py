@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="archetypesdk",
-    version="1.0.7",
+    version="1.0.9",
     description="Python bindings for Archetype. Archetype makes API monetization and usage based billing for APIs easy.",
     long_description=long_description,
     long_description_content_type="text/markdown",

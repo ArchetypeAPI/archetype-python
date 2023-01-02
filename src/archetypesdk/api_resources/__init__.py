@@ -7,3 +7,4 @@ from archetypesdk.api_resources.billable_metric import BillableMetric
 from archetypesdk.api_resources.customer import Customer
 from archetypesdk.api_resources.error import APIRequestError
 from archetypesdk.api_resources.auth import Auth
+from archetypesdk.api_resources.token import Token
