@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="archetypesdk",
-    version="1.0.9",
+    version="1.0.12",
     description="Python bindings for Archetype. Archetype makes API monetization and usage based billing for APIs easy.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -16,8 +16,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
-    packages=find_packages(where="src"),
+    packages=find_packages(),
     python_requires=">=3.6",
     install_requires=["requests", "Flask"],
     zip_safe=False,
