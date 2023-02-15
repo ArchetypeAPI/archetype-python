@@ -32,7 +32,7 @@ With Archetype, you can keep track of all your app transactions in one place —
 You don't need this source code unless you want to modify the package. If you just want to use the package, just run:
 
 ```sh
-pip install -upgrade archetypesdk
+pip install --upgrade archetypesdk
 ```
 
 
