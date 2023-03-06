@@ -4,12 +4,12 @@ from typing import List
 from archetypesdk.api_requestor import APIRequestor
 from archetypesdk.enums import Method
 
-api_requestor = APIRequestor()
 class CreatableAPIResource:
     @classmethod
     def Create(cls, version: int = 1, **params):
         object_name = cls.OBJECT_NAME
         path = f"/api/v{version}/create-{object_name}"
+        api_requestor = APIRequestor()
         api_resource = api_requestor.create_request(
             request_method=Method.POST,
             path=path,
@@ -27,9 +27,11 @@ class RetrievableAPIResource:
         cls,
         id: str,
         version: int = 1,
+        prefix: str = "api",
     ):
         object_name = cls.OBJECT_NAME
-        path = f"/api/v{version}/{object_name}/{id}"
+        path = f"/{prefix}/v{version}/{object_name}/{id}"
+        api_requestor = APIRequestor()
         api_resource = api_requestor.create_request(
             request_method=Method.GET,
             path=path,
@@ -47,14 +49,14 @@ class ListableAPIResource:
     ):
         path = f"/api/v{version}/{cls.OBJECT_NAME}s"
         api_requestor = APIRequestor()
-        billable_metrics = api_requestor.create_request(
+        api_resource = api_requestor.create_request(
             request_method=Method.GET,
             path=path,
             object=cls.OBJECT_NAME,
             intent=f"Retrieve List of {cls.OBJECT_NAME}",
         )
 
-        return billable_metrics
+        return api_resource
 
 
 class UpdateableAPIResource:

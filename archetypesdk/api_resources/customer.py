@@ -13,8 +13,8 @@ class Customer(ListableAPIResource, RetrievableAPIResource, UpdateableAPIResourc
     OBJECT_NAME = "user"
 
     @classmethod
-    def Retrieve(self, custom_uid: str, version: int = 1):
-        return super().Retrieve(id=custom_uid, version=version)
+    def Retrieve(self, custom_uid: str, version: int = 2, prefix: str = "sdk"):
+        return super().Retrieve(id=custom_uid, version=version, prefix="sdk")
 
     @classmethod
     def All(cls, version: int = 1, **params):
