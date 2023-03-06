@@ -51,9 +51,7 @@ import archetypesdk as archetype
 archetype.app_id = "ARCHETYPE_APP_ID"
 archetype.secret_key = "ARCHETYPE_SECRET_KEY"
 
-# create customer
-
-customer = archetype.Customer.Create(custom_uid="CUSTOM_UID")
+CUSTOM_CUSTOMER_UID = "XXX"
 
 # list customers
 customers = archetype.Customer.All()
@@ -62,7 +60,7 @@ customers = archetype.Customer.All()
 print(customers[0]["email"])
 
 # retrieve specific Customer
-customer = archetype.Customer.Retrieve("CUSTOM_UID")
+customer = archetype.Customer.Retrieve(CUSTOM_CUSTOMER_UID)
 
 # print that customer's email
 print(customer["email"])
@@ -70,13 +68,17 @@ print(customer["email"])
 ## Track a Metered Usage
 
 archetype.BillableMetric.LogUsage(
-    custom_ud="YOUR_CUSTOMER_ID", 
-    billable_metric_id="BILLABLE_METRIC_ID", 
-    amount=#Float
+    custom_uid=CUSTOM_CUSTOMER_UID, 
+    billable_metric_id=BILLABLE_METRIC_ID, 
+    used_amount=AMOUNT,
 )
 
 
 # Authorize a Flask Request with Archetype Middelware
+
+from flask import Flask
+
+app = Flask(__name__)
 
 @app.route("/a", methods=["GET", "POST"])
 @archetype.Auth
