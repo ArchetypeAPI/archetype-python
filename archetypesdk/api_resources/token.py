@@ -11,6 +11,6 @@ class Token(
 
 
     @classmethod
-    def Create(cls, custom_id: str, version: int = 1, **params):
-        params["custom_id"] = custom_id
+    def Create(cls, custom_uid: str, version: int = 1, **params):
+        params["custom_uid"] = custom_uid
         return super().Create(version=version, **params)
