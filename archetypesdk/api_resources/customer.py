@@ -40,7 +40,7 @@ class Customer(ListableAPIResource, RetrievableAPIResource, UpdateableAPIResourc
     @classmethod
     def ResetAPIKey(self, custom_uid: str, version: int = 1, **params):
         path = f"/api/v{version}/{self.OBJECT_NAME}/{custom_uid}/reset-api-key"
-        
+        api_requestor = APIRequestor()
         customer_data = api_requestor.create_request(
             request_method=Method.POST,
             path=path,
