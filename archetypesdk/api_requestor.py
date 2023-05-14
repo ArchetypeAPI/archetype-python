@@ -2,14 +2,17 @@ import requests
 from venv import create
 from archetypesdk.api_resources.error import APIRequestError
 from archetypesdk.enums import Method
-from archetypesdk import prod_api_base
+
 
 class APIRequestor:
     def __init__(self):
         from archetypesdk import secret_key
         from archetypesdk import app_id
+        from archetypesdk import api_url
         self.secret_key = secret_key
         self.app_id = app_id
+        self.api_url = api_url
+        
 
     def create_request(
         self,
@@ -24,7 +27,7 @@ class APIRequestor:
         headers["X-Archetype-AppID"] = self.app_id
         headers["X-Archetype-SecretKey"] = self.secret_key
     
-        url = f"{prod_api_base}{path}"
+        url = f"{self.api_url}{path}"
         if request_method == Method.GET:
             response = requests.get(url=url, headers=headers)
         elif request_method == Method.POST:
