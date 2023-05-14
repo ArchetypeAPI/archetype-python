@@ -1,7 +1,7 @@
 import asyncio
 from archetypesdk.api_resources.error import AuthRequestError
 from archetypesdk.enums import Method
-from archetypesdk import prod_api_base, auth_version
+from archetypesdk import auth_version
 import requests
 import json
 import logging
@@ -11,10 +11,11 @@ from archetypesdk.api_request_thread import requests_loop
 
 class AuthRequestor:
     def __init__(self):
-        from archetypesdk import secret_key, app_id
+        from archetypesdk import secret_key, app_id, api_url
 
         self.app_id = app_id
         self.secret_key = secret_key
+        self.api_url = api_url
 
     def create_request(
         self,
@@ -40,7 +41,7 @@ class AuthRequestor:
             "header_apikey": header_apikey,
         }
 
-        url = f"{prod_api_base}/sdk/v{auth_version}/authorize"
+        url = f"{self.api_url}/sdk/v{auth_version}/authorize"
         logging.debug(f"POST {url}")
         response = requests.post(url=url, headers=headers, json=data)
         return response
