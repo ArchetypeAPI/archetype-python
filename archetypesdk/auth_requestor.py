@@ -11,11 +11,11 @@ from archetypesdk.api_request_thread import requests_loop
 
 class AuthRequestor:
     def __init__(self):
-        from archetypesdk import secret_key, app_id, api_url
+        from archetypesdk import SECRET_KEY, APP_ID, API_URL
 
-        self.app_id = app_id
-        self.secret_key = secret_key
-        self.api_url = api_url
+        self.app_id = APP_ID
+        self.secret_key = SECRET_KEY
+        self.api_url = API_URL
 
     def create_request(
         self,

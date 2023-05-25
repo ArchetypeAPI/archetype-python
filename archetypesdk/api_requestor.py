@@ -6,12 +6,11 @@ from archetypesdk.enums import Method
 
 class APIRequestor:
     def __init__(self):
-        from archetypesdk import secret_key
-        from archetypesdk import app_id
-        from archetypesdk import api_url
-        self.secret_key = secret_key
-        self.app_id = app_id
-        self.api_url = api_url
+        from archetypesdk import SECRET_KEY, APP_ID, API_URL
+
+        self.app_id = APP_ID
+        self.secret_key = SECRET_KEY
+        self.api_url = API_URL
         
 
     def create_request(
