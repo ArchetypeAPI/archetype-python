@@ -9,9 +9,9 @@ import os
 
 # Configuration variables
 
-secret_key = os.environ.get("ARCHETYPE_SECRET_KEY")
-app_id = os.environ.get("ARCHETYPE_APP_ID")
-api_url = os.environ.get("ARCHETYPE_API_PROD_URL", "https://api.archetype.dev")
+SECRET_KEY = os.environ.get("ARCHETYPE_SECRET_KEY")
+APP_ID = os.environ.get("ARCHETYPE_APP_ID")
+API_URL = os.environ.get("ARCHETYPE_API_PROD_URL", "https://api.archetype.dev")
 upload_api_base = "https://files.archetype.dev"
 auth_version = 4
 record_auth_requests = True
